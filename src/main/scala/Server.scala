@@ -5,7 +5,7 @@ import unfiltered.filter._
 import unfiltered.directives._, Directives._
 
 object Server extends App {
-  Http(8080).resources(getClass.getResource("/")).filter(Planify(Directive.Intent {
+  Http(8080).resources(getClass.getResource("/public")).filter(Planify(Directive.Intent {
     case Path("/") =>
       for {
         _ <- GET
